@@ -283,7 +283,7 @@ nav li:nth-child(5) {
 @media (min-width: 769px) {
   /* When 'nav a' within 'nav li' is focused */
   nav li:focus-within {
-    background-color: var(--color-background);
+    background-color: rgb(100, 100, 100);
     border: transparent solid 3px;
   }
 
@@ -297,7 +297,7 @@ nav li:nth-child(5) {
   }
 
   nav li:focus-within a {
-    color: black;
+    color: white;
     outline: transparent;
   }
 }
@@ -546,7 +546,7 @@ footer.page-footer>div.container ul li:nth-child(4):hover {
 
   /* When 'nav a' within 'nav li' is focused */
   nav li:focus-within {
-    background-color: var(--color-background);
+    background-color: rgb(100, 100, 100);
     border: transparent solid 3px;
     border-bottom: #ffd900 solid 3px;
   }
@@ -554,6 +554,7 @@ footer.page-footer>div.container ul li:nth-child(4):hover {
   nav li:focus-within a {
     border: transparent;
     outline: transparent;
+    color: white;
   }
 
   section p {
