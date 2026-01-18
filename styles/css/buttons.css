@@ -235,7 +235,6 @@ nav>ul {
   align-items: center;
   overflow-x: scroll;
   white-space: nowrap;
-  border-radius: 10px;
 }
 
 #about>section:nth-child(2)>ul {
@@ -256,7 +255,6 @@ nav li {
   width: 100%;
   background-color: #ffd900cc;
   border: 3px solid rgb(100, 100, 100);
-  border-radius: 5px;
   transition: background-color 0.25s;
 }
 
@@ -266,8 +264,8 @@ nav li:hover {
 
 nav li:nth-child(n + 5) {
   position: absolute;
-  /* Bottom navbar */
-  top: calc(100vh - 40px);
+  /* Bottom navbar: total height = 46px */
+  top: calc(100vh - 46px);
 }
 
 nav li:nth-child(6) {
@@ -279,6 +277,28 @@ nav li:nth-child(6) {
 nav li:nth-child(5) {
   width: 50vw;
   left: 0;
+}
+
+@media (min-width: 769px) {
+  /* When 'nav a' within 'nav li' is focused */
+  nav li:focus-within {
+    background-color: var(--color-background);
+    border: transparent solid 3px;
+  }
+
+  /* nav li:nth-child(-n + 4) targets the 4 top navbar links */
+  nav li:nth-child(-n + 4):focus-within {
+    border-bottom: #ffd900 solid 3px;
+  }
+
+  nav li:nth-child(n + 5):focus-within {
+    border-top: #ffd900 solid 3px;
+  }
+
+  nav li:focus-within a {
+    color: black;
+    outline: transparent;
+  }
 }
 
 nav a {
@@ -516,12 +536,23 @@ footer.page-footer>div.container ul li:nth-child(4):hover {
 
   nav a {
     padding: 0 2vw;
-    border: 2px dashed black;
     min-width: 100px;
   }
 
   nav li:nth-child(n + 5) {
     position: unset;
+  }
+
+  /* When 'nav a' within 'nav li' is focused */
+  nav li:focus-within {
+    background-color: var(--color-background);
+    border: transparent solid 3px;
+    border-bottom: #ffd900 solid 3px;
+  }
+
+  nav li:focus-within a {
+    border: transparent;
+    outline: transparent;
   }
 
   section p {
